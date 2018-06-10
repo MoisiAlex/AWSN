@@ -34,12 +34,17 @@
     function updateContactAttribute(msg){
         var tableRef = document.getElementById('attributesTable').getElementsByTagName('tbody')[0];      
         for (var key in msg) {
-            if (msg.hasOwnProperty(key)) {
+            console.log(msg);
+            if (msg.hasOwnProperty(key) && (key != "JIRAlink")) {
+
                         var row = tableRef.insertRow(tableRef.rows.length);
                         var cell1 = row.insertCell(0);
                         var cell2 = row.insertCell(1);
                         cell1.innerHTML = key;
                         cell2.innerHTML = msg[key]['value'];
+                    if(key == "JIRAkey"){
+                        cell2.innerHTML = msg['JIRAlink']['value'];
+                }
             }
         }
         
