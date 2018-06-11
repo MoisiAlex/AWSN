@@ -43,7 +43,8 @@
                         cell1.innerHTML = key;
                         cell2.innerHTML = msg[key]['value'];
                     if(key == "JIRAkey"){
-                        cell2.innerHTML = msg['JIRAlink']['value'];
+                        cell2.innerHTML = '<a href="'+msg['JIRAlink']['value']+ '">'+msg[key]['value']+'</a>';
+;
                 }
             }
         }
